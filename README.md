@@ -70,6 +70,32 @@
 
 [NMN研究室網站](https://nmn-research-lab-nmn-research-lab-branch-3.manus.cloud/)
 
+### 部署到 Cloudflare Pages
+
+您可以將此專案部署到 Cloudflare Pages，以獲得快速、可靠的全球內容分發。以下是部署步驟：
+
+1. **登入 Cloudflare 帳戶**：
+   前往 [Cloudflare Dashboard](https://dash.cloudflare.com/) 並登入您的帳戶。
+
+2. **選擇 Pages 服務**：
+   在左側導航欄中，點擊「Workers & Pages」，然後選擇「Create application」並點擊「Pages」下的「Connect to Git」。
+
+3. **連接 GitHub 儲存庫**：
+   - 選擇您的 GitHub 帳戶，並授權 Cloudflare 訪問您的儲存庫。
+   - 選擇 `NMN` 儲存庫。
+
+4. **配置建構設定**：
+   - **Project name**: `NMN` (或您喜歡的名稱)
+   - **Production branch**: `main`
+   - **Build command**: `pnpm install && pnpm run build`
+   - **Build output directory**: `dist`
+
+5. **部署網站**：
+   點擊「Save and Deploy」。Cloudflare 將會自動從您的 GitHub 儲存庫拉取代碼，執行建構命令，並將生成的靜態文件部署到其全球邊緣網路。
+
+6. **查看部署狀態**：
+   部署完成後，您將獲得一個唯一的預覽 URL。每次您推送到 `main` 分支時，Cloudflare Pages 都會自動重新建構和部署您的網站。
+
 ## 貢獻
 
 歡迎任何形式的貢獻！如果您有任何建議或發現問題，請隨時提交 Issue 或 Pull Request。

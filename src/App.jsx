@@ -633,53 +633,257 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-16">
-        <div className="container mx-auto px-4 text-center space-y-4">
-          <p className="text-gray-400 text-base md:text-lg">
-            本網站內容基於科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
-          </p>
-          <p className="text-gray-400 text-base md:text-lg">
-            使用任何補充劑前，請諮詢專業醫療人員。
-          </p>
+      <footer className="bg-gray-900 text-white py-12 mt-16">
+        <div className="container mx-auto px-4 space-y-8">
+          <div className="text-center space-y-4">
+            <p className="text-gray-400 text-base md:text-lg">
+              本網站內容基於科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
+            </p>
+            <p className="text-gray-400 text-base md:text-lg">
+              使用任何補充劑前，請諮詢專業醫療人員。
+            </p>
+          </div>
+
           <Separator className="bg-gray-700" />
-          <div className="space-y-2">
-            <p className="text-gray-500 text-sm md:text-base">參考資料來源</p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
+
+          {/* 監理機關參考資料 */}
+          <div className="space-y-6">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">各國監理機關</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+              {/* 美國 FDA */}
               <a 
                 href="https://www.fda.gov/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 underline"
+                className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500"
               >
-                FDA
+                <span className="text-3xl">🇺🇸</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">美國 FDA</p>
+                  <p className="text-gray-400 text-sm">U.S. Food and Drug Administration</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
               </a>
+
+              {/* 歐盟 EFSA */}
               <a 
                 href="https://www.efsa.europa.eu/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 underline"
+                className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500"
               >
-                EFSA
+                <span className="text-3xl">🇪🇺</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">歐盟 EFSA</p>
+                  <p className="text-gray-400 text-sm">European Food Safety Authority</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
               </a>
+
+              {/* 日本 MHLW */}
+              <a 
+                href="https://www.mhlw.go.jp/english/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500"
+              >
+                <span className="text-3xl">🇯🇵</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">日本 厚生勞動省</p>
+                  <p className="text-gray-400 text-sm">Ministry of Health, Labour and Welfare</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+
+              {/* 台灣 TFDA */}
+              <a 
+                href="https://www.fda.gov.tw/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500"
+              >
+                <span className="text-3xl">🇹🇼</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">台灣 食藥署</p>
+                  <p className="text-gray-400 text-sm">Taiwan Food and Drug Administration</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+
+              {/* 加拿大 Health Canada */}
+              <a 
+                href="https://www.canada.ca/en/health-canada.html" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500"
+              >
+                <span className="text-3xl">🇨🇦</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">加拿大 衛生部</p>
+                  <p className="text-gray-400 text-sm">Health Canada</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+
+              {/* 澳洲 TGA */}
+              <a 
+                href="https://www.tga.gov.au/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500"
+              >
+                <span className="text-3xl">🇦🇺</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">澳洲 藥品管理局</p>
+                  <p className="text-gray-400 text-sm">Therapeutic Goods Administration</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+            </div>
+          </div>
+
+          <Separator className="bg-gray-700" />
+
+          {/* 學術與研究資源 */}
+          <div className="space-y-6">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">學術與研究資源</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {/* PubMed */}
               <a 
                 href="https://pubmed.ncbi.nlm.nih.gov/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 underline"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500"
               >
-                PubMed
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">📚</span>
+                  <p className="font-semibold text-white text-base md:text-lg">PubMed</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">美國國家醫學圖書館</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
               </a>
+
+              {/* ClinicalTrials.gov */}
               <a 
                 href="https://clinicaltrials.gov/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 underline"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500"
               >
-                ClinicalTrials.gov
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🔬</span>
+                  <p className="font-semibold text-white text-base md:text-lg">ClinicalTrials.gov</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">臨床試驗資料庫</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+
+              {/* The Sinclair Lab */}
+              <a 
+                href="https://sinclair.hms.harvard.edu/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🧬</span>
+                  <p className="font-semibold text-white text-base md:text-lg">Sinclair Lab</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">哈佛衰老研究實驗室</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+
+              {/* Washington University */}
+              <a 
+                href="https://medicine.wustl.edu/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🏥</span>
+                  <p className="font-semibold text-white text-base md:text-lg">WashU Medicine</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">華盛頓大學醫學院</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
               </a>
             </div>
           </div>
-          <p className="text-gray-500 mt-4 text-sm md:text-base">
+
+          <Separator className="bg-gray-700" />
+
+          {/* 行業協會 */}
+          <div className="space-y-6">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">行業協會與組織</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              {/* NPA */}
+              <a 
+                href="https://www.npanational.org/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🏛️</span>
+                  <p className="font-semibold text-white text-base md:text-lg">NPA</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">Natural Products Association</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+
+              {/* ANH-USA */}
+              <a 
+                href="https://anh-usa.org/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🌿</span>
+                  <p className="font-semibold text-white text-base md:text-lg">ANH-USA</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">Alliance for Natural Health USA</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+
+              {/* CRN */}
+              <a 
+                href="https://www.crnusa.org/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">⚖️</span>
+                  <p className="font-semibold text-white text-base md:text-lg">CRN</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">Council for Responsible Nutrition</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+
+              {/* AHPA */}
+              <a 
+                href="https://www.ahpa.org/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🌱</span>
+                  <p className="font-semibold text-white text-base md:text-lg">AHPA</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">American Herbal Products Association</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+            </div>
+          </div>
+
+          <Separator className="bg-gray-700" />
+
+          <p className="text-gray-500 text-center text-sm md:text-base">
             © 2025 NMN研究室. All rights reserved.
           </p>
         </div>

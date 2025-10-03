@@ -23,39 +23,39 @@ function App() {
                 <p className="text-base md:text-lg text-gray-600">效用與安全 實證探討</p>
               </div>
             </div>
-            <nav className="flex gap-2 overflow-x-auto pb-2 md:pb-0 md:flex-wrap justify-center scrollbar-hide">
+            <nav className="flex gap-2 overflow-x-scroll whitespace-nowrap pb-2 md:pb-0 md:flex-wrap justify-center scrollbar-hide">
               <Button 
                 variant={activeTab === 'home' ? 'default' : 'ghost'} 
                 onClick={() => setActiveTab('home')}
-                className="transition-all text-base md:text-lg px-4 py-2 md:px-6 md:py-3 h-auto"
+                className="transition-all text-lg sm:text-xl px-5 py-2.5 sm:px-7 sm:py-3.5 h-auto flex-shrink-0"
               >
                 首頁
               </Button>
               <Button 
                 variant={activeTab === 'science' ? 'default' : 'ghost'} 
                 onClick={() => setActiveTab('science')}
-                className="transition-all text-base md:text-lg px-4 py-2 md:px-6 md:py-3 h-auto"
+                className="transition-all text-lg sm:text-xl px-5 py-2.5 sm:px-7 sm:py-3.5 h-auto flex-shrink-0"
               >
                 科學基礎
               </Button>
               <Button 
                 variant={activeTab === 'evidence' ? 'default' : 'ghost'} 
                 onClick={() => setActiveTab('evidence')}
-                className="transition-all text-base md:text-lg px-4 py-2 md:px-6 md:py-3 h-auto"
+                className="transition-all text-lg sm:text-xl px-5 py-2.5 sm:px-7 sm:py-3.5 h-auto flex-shrink-0"
               >
                 臨床實證
               </Button>
               <Button 
                 variant={activeTab === 'market' ? 'default' : 'ghost'} 
                 onClick={() => setActiveTab('market')}
-                className="transition-all text-base md:text-lg px-4 py-2 md:px-6 md:py-3 h-auto"
+                className="transition-all text-lg sm:text-xl px-5 py-2.5 sm:px-7 sm:py-3.5 h-auto flex-shrink-0"
               >
                 市場與法規
               </Button>
               <Button 
                 variant={activeTab === 'conclusion' ? 'default' : 'ghost'} 
                 onClick={() => setActiveTab('conclusion')}
-                className="transition-all text-base md:text-lg px-4 py-2 md:px-6 md:py-3 h-auto"
+                className="transition-all text-lg sm:text-xl px-5 py-2.5 sm:px-7 sm:py-3.5 h-auto flex-shrink-0"
               >
                 結論與建議
               </Button>
@@ -65,15 +65,15 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 max-w-screen-xl">
         {/* Home Tab */}
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fade-in">
             <Alert className="border-blue-200 bg-blue-50">
               <Info className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
               <AlertTitle className="text-xl md:text-2xl font-bold text-blue-900">FDA最新立場更新</AlertTitle>
-              <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-base md:text-lg">
-                <strong>2025年9月29日</strong>，FDA正式改變立場，發布公開信確認「NMN符合膳食補充劑的定義」。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻了2022年的排除決定，為NMN產品在美國市場的合法地位提供了明確保障。
+              <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-lg md:text-xl">
+                <strong>2025年9月29日</strong>，美國FDA正式改變立場，發布公開信確認「NMN符合膳食補充劑的定義」。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻了2022年的排除決定，為NMN產品在美國市場的合法地位提供了明確保障。
                 <br /><br />
                 <a 
                   href="https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf" 
@@ -87,8 +87,8 @@ function App() {
             </Alert>
 
             <div className="text-center space-y-4 py-8">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">新型態膳食補充劑：NMN</h2>
-              <p className="text-lg md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">新型態膳食補充劑：NMN</h2>
+              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 菸鹼醯胺單核苷酸（NMN）作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
               </p>
             </div>
@@ -97,32 +97,32 @@ function App() {
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('science')}>
                 <CardHeader>
                   <FlaskConical className="h-12 w-12 md:h-14 md:w-14 text-blue-600 mb-2" />
-                  <CardTitle className="text-xl md:text-2xl">科學基礎</CardTitle>
-                  <CardDescription className="text-base md:text-lg">了解NAD⁺與NMN的生物化學機制</CardDescription>
+                  <CardTitle className="text-2xl sm:text-3xl">科學基礎</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">了解NAD⁺與NMN的生物化學機制</CardDescription>
                 </CardHeader>
               </Card>
 
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('evidence')}>
                 <CardHeader>
                   <Heart className="h-12 w-12 md:h-14 md:w-14 text-red-600 mb-2" />
-                  <CardTitle className="text-xl md:text-2xl">臨床實證</CardTitle>
-                  <CardDescription className="text-base md:text-lg">探索人體與動物研究的發現</CardDescription>
+                  <CardTitle className="text-2xl sm:text-3xl">臨床實證</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">探索人體與動物研究的發現</CardDescription>
                 </CardHeader>
               </Card>
 
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('market')}>
                 <CardHeader>
                   <Globe className="h-12 w-12 md:h-14 md:w-14 text-green-600 mb-2" />
-                  <CardTitle className="text-xl md:text-2xl">市場與法規</CardTitle>
-                  <CardDescription className="text-base md:text-lg">掌握全球與台灣的監管動態</CardDescription>
+                  <CardTitle className="text-2xl sm:text-3xl">市場與法規</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">掌握全球與台灣的監管動態</CardDescription>
                 </CardHeader>
               </Card>
 
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('conclusion')}>
                 <CardHeader>
                   <Scale className="h-12 w-12 md:h-14 md:w-14 text-purple-600 mb-2" />
-                  <CardTitle className="text-xl md:text-2xl">結論與建議</CardTitle>
-                  <CardDescription className="text-base md:text-lg">獲取專業的消費與政策建議</CardDescription>
+                  <CardTitle className="text-2xl sm:text-3xl">結論與建議</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">獲取專業的消費與政策建議</CardDescription>
                 </CardHeader>
               </Card>
             </div>

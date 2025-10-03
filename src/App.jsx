@@ -23,7 +23,7 @@ function App() {
                 <p className="text-base md:text-lg text-gray-600">效用與安全 實證探討</p>
               </div>
             </div>
-            <nav className="flex gap-2 flex-wrap justify-center">
+            <nav className="flex gap-2 overflow-x-auto pb-2 md:pb-0 md:flex-wrap justify-center scrollbar-hide">
               <Button 
                 variant={activeTab === 'home' ? 'default' : 'ghost'} 
                 onClick={() => setActiveTab('home')}

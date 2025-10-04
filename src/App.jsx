@@ -10,7 +10,7 @@ import './App.css'
 function App() {
   const [activeTab, setActiveTab] = useState('home')
 
-  // 優化建議：將導覽項目定義為一個陣列
+  // 優化：將導覽項目定義為一個陣列，方便管理
   const navItems = [
     { id: 'home', label: '首頁' },
     { id: 'science', label: '科學基礎' },
@@ -32,9 +32,9 @@ function App() {
                 <p className="text-base md:text-lg text-gray-600">效用與安全 實證探討</p>
               </div>
             </div>
-            {/* 解決問題：移除 justify-center，並改為 md:justify-center */}
-            {/* 優化建議：使用 map 迴圈來渲染按鈕 */}
-            <nav className="flex gap-2 overflow-x-scroll whitespace-nowrap pb-2 md:pb-0 md:flex-wrap md:justify-center scrollbar-hide">
+            
+            {/* 修復與優化：確保手機能左右滑動，並使用 map 迴圈生成按鈕 */}
+            <nav className="flex flex-nowrap gap-2 overflow-x-scroll whitespace-nowrap pb-2 scrollbar-hide md:flex-wrap md:justify-center md:pb-0">
               {navItems.map((item) => (
                 <Button 
                   key={item.id}
@@ -156,7 +156,7 @@ function App() {
                       <CheckCircle2 className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                       <div>
                         <strong className="text-gray-900 text-lg">PARPs（聚ADP核糖聚合酶）</strong>
-                        <p className="text-gray-700">特別是PARP-1，當偵測到DNA單鏈斷裂時會被迅速活化，大量消耗NAD⁺來合成聚合物，標記損傷位置並召集修復蛋白。這對維持基因組穩定性至關重要。</p>
+                        <p className="text-gray-700">特別是PARP-1，當偵測到DNA單鏈斷裂時會被迅速活化，大量消耗NAD⁺來合成聚合物，標記損傷位置並召集修復蛋白。這對維持基因組穩定性至重要。</p>
                       </div>
                     </div>
                   </div>

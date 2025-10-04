@@ -118,3 +118,11 @@
     @apply bg-background text-foreground;
   }
 }
+/* src/App.css */
+
+/* ... 你原有的其他樣式 ... */
+
+/* 新增這個 class 來強制不換行 */
+.force-no-wrap {
+  flex-wrap: nowrap !important;
+}

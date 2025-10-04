@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react' // 步驟3：匯入 useEffect
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Separator } from '@/components/ui/separator.jsx'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert.jsx'
-import { FlaskConical, Heart, Scale, Globe, CheckCircle2, AlertTriangle, Info, ExternalLink } from 'lucide-react'
+// 步驟2：匯入 ChevronDown 圖示
+import { FlaskConical, Heart, Scale, Globe, CheckCircle2, AlertTriangle, Info, ExternalLink, ChevronDown } from 'lucide-react'
 import './App.css'
 
 function App() {
@@ -17,6 +18,12 @@ function App() {
     { id: 'market', label: '市場與法規' },
     { id: 'conclusion', label: '結論與建議' },
   ]
+
+  // 步驟3：每次點選分頁時，都回到最上方開始瀏覽
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
@@ -32,28 +39,28 @@ function App() {
               </div>
             </div>
             
-            {/* --- 導覽列重構開始 --- */}
-
-            {/* 桌面版：維持原本的按鈕樣式 (只在 md 尺寸以上顯示) */}
-            <nav className="hidden md:flex md:flex-wrap md:gap-2 md:justify-center">
+            {/* 桌面版導覽列 */}
+            <nav className="hidden md:flex md:flex-wrap md:gap-1 md:justify-center">
               {navItems.map((item) => (
                 <Button 
                   key={item.id}
                   variant={activeTab === item.id ? 'default' : 'ghost'} 
                   onClick={() => setActiveTab(item.id)}
-                  className="transition-all text-lg sm:text-xl px-5 py-2.5 sm:px-7 sm:py-3.5 h-auto flex-shrink-0"
+                  // 步驟1：縮小電腦版按鈕樣式
+                  className="transition-all text-base px-4 py-2 h-auto flex-shrink-0"
                 >
                   {item.label}
                 </Button>
               ))}
             </nav>
 
-            {/* 手機版：改為下拉式選單 (只在 md 尺寸以下顯示) */}
-            <div className="w-full md:hidden">
+            {/* 手機版下拉選單 */}
+            <div className="w-full md:hidden relative">
+              {/* 步驟2：優化手機版下拉選單樣式 */}
               <select
                 value={activeTab}
                 onChange={(e) => setActiveTab(e.target.value)}
-                className="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg"
+                className="w-full appearance-none rounded-md border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-base font-semibold"
               >
                 {navItems.map((item) => (
                   <option key={item.id} value={item.id}>
@@ -61,10 +68,8 @@ function App() {
                   </option>
                 ))}
               </select>
+              <ChevronDown className="absolute top-1/2 right-3 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
             </div>
-            
-            {/* --- 導覽列重構結束 --- */}
-
           </div>
         </div>
       </header>
@@ -887,9 +892,8 @@ function App() {
           </div>
 
           <Separator className="bg-gray-700" />
-
           <p className="text-gray-500 text-center text-sm md:text-base">
-            © 2025 NMN研究室. All rights reserved.
+            © 2025 <a href="https://nmn.wedopr.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400">NMN研究室</a>. All rights reserved. <a href="https://www.wedopr.com/" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400">www.WEDOPR.com</a>
           </p>
         </div>
       </footer>

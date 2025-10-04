@@ -156,7 +156,9 @@ FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/a
 
 ### 提示詞範例:
 
-請為我的「NMN研究室」網站（網址為 https://nmn.wedopr.com/）生成一份完整的 HTML <head> 標籤內容。
+請為我的「NMN研究室」網站（網址為 https://nmn.wedopr.com/）
+
+生成一份完整的 HTML <head> 標籤內容。
 
 要求包含:
 

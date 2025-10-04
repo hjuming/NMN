@@ -10,7 +10,6 @@ import './App.css'
 function App() {
   const [activeTab, setActiveTab] = useState('home')
 
-  // 優化：將導覽項目定義為一個陣列，方便管理
   const navItems = [
     { id: 'home', label: '首頁' },
     { id: 'science', label: '科學基礎' },
@@ -33,8 +32,10 @@ function App() {
               </div>
             </div>
             
-            {/* 終極修復與優化：加入 force-no-wrap class 來強制不換行 */}
-            <nav className="flex flex-nowrap gap-2 overflow-x-scroll whitespace-nowrap pb-2 scrollbar-hide md:flex-wrap md:justify-center md:pb-0 force-no-wrap">
+            {/* --- 導覽列重構開始 --- */}
+
+            {/* 桌面版：維持原本的按鈕樣式 (只在 md 尺寸以上顯示) */}
+            <nav className="hidden md:flex md:flex-wrap md:gap-2 md:justify-center">
               {navItems.map((item) => (
                 <Button 
                   key={item.id}
@@ -46,6 +47,24 @@ function App() {
                 </Button>
               ))}
             </nav>
+
+            {/* 手機版：改為下拉式選單 (只在 md 尺寸以下顯示) */}
+            <div className="w-full md:hidden">
+              <select
+                value={activeTab}
+                onChange={(e) => setActiveTab(e.target.value)}
+                className="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-lg"
+              >
+                {navItems.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            
+            {/* --- 導覽列重構結束 --- */}
+
           </div>
         </div>
       </header>

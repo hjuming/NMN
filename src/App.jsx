@@ -939,13 +939,14 @@ function App() {
 
           <Separator className="bg-gray-700" />
 
-          <p className="text-gray-500 text-center text-sm md:text-base">
-            © 2025 NMN研究室. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
-  )
+          {/* 版權宣告 */}
+          <p className="text-gray-500 text-center text-sm md:text-base">
+            © 2025 <a href="https://nmn.wedopr.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">NMN研究室</a>. All rights reserved. | <a href="https://www.wedopr.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">www.WEDOPR.com</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  )
 }
 
 export default App

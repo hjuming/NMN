@@ -52,12 +52,12 @@ AI SEO / AIO 優化：網站的 HTML 結構與 Meta 標籤經過優化，有利�
 ## 📄 參考資料來源
 以下為本網站內容所參考的主要文獻、報告與官方網站。
 
-主要研究文獻
+### 主要研究文獻
 NMN 改善胰島素敏感性研究 (聖路易斯華盛頓大學): https://pubmed.ncbi.nlm.nih.gov/33888596/
 
 NMN 安全性綜合研究 (GeroScience, 2023): https://pubmed.ncbi.nlm.nih.gov/36482258/
 
-數據庫與研究機構
+### 數據庫與研究機構
 美國國家醫學圖書館 (PubMed): https://pubmed.ncbi.nlm.nih.gov/
 
 美國臨床試驗資料庫 (ClinicalTrials.gov): https://clinicaltrials.gov/
@@ -66,7 +66,7 @@ NMN 安全性綜合研究 (GeroScience, 2023): https://pubmed.ncbi.nlm.nih.gov/3
 
 聖路易斯華盛頓大學醫學院: https://medicine.wustl.edu/
 
-各國監管機關
+### 各國監管機關
 美國食品藥物管理局 (FDA): https://www.fda.gov/
 
 FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf
@@ -81,15 +81,15 @@ FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/a
 
 澳洲藥品管理局 (TGA): https://www.tga.gov.au/
 
-## 🤖 使用 AI 工具架設類似網站指南
+# 🤖 使用 AI 工具架設類似網站指南
 如果您想利用大型語言模型（LLM）等 AI 工具來建立一個類似的資訊網站，可以遵循以下步驟。核心理念是將一個複雜的任務拆解成多個具體、清晰的指令 (Prompt)。
 
-步驟一：定義專案與技術選型 (Prompt 1)
+## 步驟一：定義專案與技術選型 (Prompt 1)
 首先，您需要讓 AI 為您建立整個專案的基礎架構和程式碼。
 
 目標：生成一個包含所有必要檔案和基本版面（如 Header, Main, Footer）的單頁應用程式。
 
-提示詞範例:
+### 提示詞範例:
 
 請扮演一位資深前端工程師。我需要建立一個關於「NMN 效用與安全探討」的資訊網站。
 
@@ -113,12 +113,12 @@ FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/a
 
 請為我生成 App.jsx 檔案的完整程式碼，並使用 useState 來管理當前活動的頁籤狀態。
 
-步驟二：生成頁面主要內容 (Prompt 2)
+## 步驟二：生成頁面主要內容 (Prompt 2)
 有了骨架後，開始填充每個頁面的詳細文字內容。
 
 目標：為每個分頁生成專業、結構化的文字內容。
 
-提示詞範例:
+### 提示詞範例:
 
 根據我們剛才建立的網站架構，請為「科學基礎」這個分頁撰寫內容。內容需要以中立、科學的語氣撰寫，並分為三個主要部分，每個部分都放在卡片 (Card) 樣式中：
 
@@ -130,12 +130,12 @@ FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/a
 
 請在內容中適當地使用 <strong> 標籤來強調關鍵字詞。
 
-步驟三：細化元件與加入視覺元素 (Prompt 3)
+## 步驟三：細化元件與加入視覺元素 (Prompt 3)
 當內容就緒後，您可以要求 AI 美化版面、加入圖片和互動功能。
 
 目標：在現有程式碼基礎上，加入圖片、圖示和 FAQ 等功能。
 
-提示詞範例:
+### 提示詞範例:
 
 好的，現在請修改我提供的 App.jsx 程式碼，並完成以下任務：
 
@@ -147,12 +147,12 @@ FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/a
 
 請使用 lucide-react 的圖示來美化細節，例如 FAQ 的展開/收合符號。
 
-步驟四：SEO 與最終優化 (Prompt 4)
+## 步驟四：SEO 與最終優化 (Prompt 4)
 最後一步是讓網站對搜尋引擎更友善。
 
 目標：生成用於 index.html 的 Meta 標籤。
 
-提示詞範例:
+### 提示詞範例:
 
 請為我的「NMN研究室」網站（網址為 https://nmn.wedopr.com/）生成一份完整的 HTML <head> 標籤內容。
 

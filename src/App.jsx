@@ -23,23 +23,28 @@ function App() {
     { id: 'conclusion', label: '結論與建議' },
   ]
 
+  // --- FAQ 內容已擴充 ---
   const faqData = [
     {
       question: "NMN 是什麼？它和 NAD+ 有什麼關係？",
       answer: "NMN (菸鹼醯胺單核苷酸) 是人體內天然存在的分子，也是 NAD+ (菸鹼醯胺腺嘌呤二核苷酸) 的直接前體。您可以將 NMN 視為製造 NAD+ 的原料。補充 NMN 的主要目的就是為了提升體內 NAD+ 的水平，因為 NAD+ 在細胞能量代謝、DNA 修復和維持整體健康中扮演著至關重要的角色。"
     },
     {
+      question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
+      answer: "NMN 和 NR 都是 NAD+ 的前體，也都能有效提升體內 NAD+ 水平。主要區別在於它們的分子結構和進入細胞的路徑。NMN 的分子比 NR 大一點。科學界對哪個前體更優越尚無定論，兩者都有研究支持其功效。您可以將它們視為通往相同目的地（提升 NAD+）的不同路徑。"
+    },
+    {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",
       answer: "根據目前已發表的人體臨床試驗，NMN 具有良好的安全性和耐受性。常見的有效劑量範圍在每日 250mg 至 1000mg 之間。然而，如果您有潛在的健康問題或正在服用其他藥物，在開始服用任何新的補充劑前，務必諮詢您的醫師或專業醫療人員。"
     },
     {
-      question: "NMN 在台灣是合法的嗎？",
-      answer: "截至目前，台灣衛福部食藥署 (TFDA) 尚未將高純度的 NMN 列為合法的「食品原料」。因此，在台灣市場上，您可能會看到一些含有 NMN 前體（如菸鹼醯胺或菸鹼酸）的產品，或是透過跨境電商購買的 NMN 產品。法規狀態可能會變動，建議隨時關注 TFDA 的最新公告。"
+      question: "購買 NMN 產品時應該注意什麼？",
+      answer: "選購時應注意以下三點：1. **純度**：選擇純度高達 99% 以上的產品。2. **第三方檢測**：確認產品是否經過獨立實驗室的檢測，以確保其純度和不含有害物質（如重金屬）。3. **信譽**：選擇信譽良好、資訊透明的品牌。警惕價格過低或來源不明的產品。"
     },
     {
-      question: "服用 NMN 多久才能看到效果？",
-      answer: "效果因人而異，取決於個人年齡、健康狀況、生活方式和服用劑量。一些研究顯示，血液中的 NAD+ 水平在服用後幾週內就會提升，但身體上的感受（如體力、精神狀態的改善）可能需要數週到數月才會變得比較明顯。NMN 更像是一種長期保養，而非速效藥物。"
-    }
+      question: "運動搭配 NMN 是否效果更好？",
+      answer: "這是一個很有潛力的組合。運動本身就能自然提升 NAD+ 水平並改善粒線體功能，而 NMN 則為 NAD+ 的合成提供原料。一些研究指出，補充 NMN 可以增強耐力和運動表現。因此，將 NMN 補充劑與規律運動相結合，理論上可能產生協同效應，對整體健康和活力帶來更好的支持。"
+    },
   ];
   
   useEffect(() => {
@@ -159,6 +164,10 @@ function App() {
 
         {activeTab === 'science' && (
           <div className="space-y-8 animate-fade-in">
+            {/* --- Hero 圖片已加入 --- */}
+            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
+              <img src="https://i.urusai.cc/UyfbG.jpg" alt="科學基礎概念圖" className="w-full h-full object-cover" />
+            </div>
             <div className="text-center space-y-4 py-4">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900">NMN的科學基礎</h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -248,6 +257,10 @@ function App() {
 
         {activeTab === 'evidence' && (
           <div className="space-y-8 animate-fade-in">
+            {/* --- Hero 圖片已加入 --- */}
+            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
+              <img src="https://i.urusai.cc/HgisN.jpg" alt="臨床實證概念圖" className="w-full h-full object-cover" />
+            </div>
             <div className="text-center space-y-4 py-4">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900">臨床實證</h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -338,6 +351,10 @@ function App() {
 
         {activeTab === 'market' && (
           <div className="space-y-8 animate-fade-in">
+            {/* --- Hero 圖片已加入 --- */}
+            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
+              <img src="https://i.urusai.cc/xwYpi.jpg" alt="市場與法規概念圖" className="w-full h-full object-cover" />
+            </div>
             <div className="text-center space-y-4 py-4">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900">市場與法規</h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -442,6 +459,10 @@ function App() {
 
         {activeTab === 'conclusion' && (
           <div className="space-y-8 animate-fade-in">
+            {/* --- Hero 圖片已加入 --- */}
+            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
+              <img src="https://i.urusai.cc/l8oQ3.jpg" alt="結論與建議概念圖" className="w-full h-full object-cover" />
+            </div>
             <div className="text-center space-y-4 py-4">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900">結論與建議</h2>
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">

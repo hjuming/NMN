@@ -33,8 +33,8 @@ function App() {
               </div>
             </div>
             
-            {/* 修復與優化：確保手機能左右滑動，並使用 map 迴圈生成按鈕 */}
-            <nav className="flex flex-nowrap gap-2 overflow-x-scroll whitespace-nowrap pb-2 scrollbar-hide md:flex-wrap md:justify-center md:pb-0">
+            {/* 終極修復與優化：加入 force-no-wrap class 來強制不換行 */}
+            <nav className="flex flex-nowrap gap-2 overflow-x-scroll whitespace-nowrap pb-2 scrollbar-hide md:flex-wrap md:justify-center md:pb-0 force-no-wrap">
               {navItems.map((item) => (
                 <Button 
                   key={item.id}
@@ -59,7 +59,7 @@ function App() {
               <Info className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
               <AlertTitle className="text-xl md:text-2xl font-bold text-blue-900">FDA最新立場更新</AlertTitle>
               <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-lg md:text-xl">
-                <strong>2025年9月29日</strong>，美國FDA正式改變立場，發布公開信確認「NMN符合膳食補充劑的定義」。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻了2022年的排除決定，為NMN產品在美國市場的合法地位提供了明確保障。
+                <strong>2025年09月29日</strong>美國FDA發布公開信確認「NMN符合膳食補充劑的定義」，正式改變立場。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻2022年的排除決定，為NMN產品在美國市場的合法地位提供明確保障。
                 <br /><br />
                 <a 
                   href="https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf" 

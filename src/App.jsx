@@ -1,140 +1,164 @@
 import { useState, useEffect } from 'react'
+// 已移除 Helmet, HelmetProvider
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
 import { Separator } from '@/components/ui/separator.jsx'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert.jsx'
-import { FlaskConical, Heart, Scale, Globe, CheckCircle2, AlertTriangle, Info, ExternalLink, ChevronDown, HelpCircle } from 'lucide-react'
+import { FlaskConical, Heart, Scale, Globe, CheckCircle2, AlertTriangle, Info, ExternalLink, ChevronDown, Plus, Minus } from 'lucide-react'
 import './App.css'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home')
+  const [activeTab, setActiveTab] = useState('home')
+  const [openFaq, setOpenFaq] = useState(null); // FAQ 折疊選單狀態
 
-  // 優化建議：將導覽項目定義為一個陣列
-  const navItems = [
-    { id: 'home', label: '首頁' },
-    { id: 'science', label: '科學基礎' },
-    { id: 'evidence', label: '臨床實證' },
-    { id: 'market', label: '市場與法規' },
-    { id: 'conclusion', label: '結論與建議' },
-  ]
-useEffect(() => {
+  const navItems = [
+    { id: 'home', label: '首頁' },
+    { id: 'science', label: '科學基礎' },
+    { id: 'evidence', label: '臨床實證' },
+    { id: 'market', label: '市場與法規' },
+    { id: 'conclusion', label: '結論與建議' },
+  ]
+
+  const faqData = [
+    {
+      question: "NMN 是什麼？它和 NAD+ 有什麼關係？",
+      answer: "NMN (菸鹼醯胺單核苷酸) 是人體內天然存在的分子，也是 NAD+ (菸鹼醯胺腺嘌呤二核苷酸) 的直接前體。您可以將 NMN 視為製造 NAD+ 的原料。補充 NMN 的主要目的就是為了提升體內 NAD+ 的水平，因為 NAD+ 在細胞能量代謝、DNA 修復和維持整體健康中扮演著至關重要的角色。"
+    },
+    {
+      question: "服用 NMN 安全嗎？建議的劑量是多少？",
+      answer: "根據目前已發表的人體臨床試驗，NMN 具有良好的安全性和耐受性。常見的有效劑量範圍在每日 250mg 至 1000mg 之間。然而，如果您有潛在的健康問題或正在服用其他藥物，在開始服用任何新的補充劑前，務必諮詢您的醫師或專業醫療人員。"
+    },
+    {
+      question: "NMN 在台灣是合法的嗎？",
+      answer: "截至目前，台灣衛福部食藥署 (TFDA) 尚未將高純度的 NMN 列為合法的「食品原料」。因此，在台灣市場上，您可能會看到一些含有 NMN 前體（如菸鹼醯胺或菸鹼酸）的產品，或是透過跨境電商購買的 NMN 產品。法規狀態可能會變動，建議隨時關注 TFDA 的最新公告。"
+    },
+    {
+      question: "服用 NMN 多久才能看到效果？",
+      answer: "效果因人而異，取決於個人年齡、健康狀況、生活方式和服用劑量。一些研究顯示，血液中的 NAD+ 水平在服用後幾週內就會提升，但身體上的感受（如體力、精神狀態的改善）可能需要數週到數月才會變得比較明顯。NMN 更像是一種長期保養，而非速效藥物。"
+    }
+  ];
+  
+  // 每次點選分頁時，都回到最上方
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, [activeTab]);
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md shadow-sm">
-        <div className="container mx-auto px-4 py-5 md:py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <FlaskConical className="h-10 w-10 md:h-12 md:w-12 text-blue-600" />
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-900">NMN研究室</h1>
-                <p className="text-base md:text-lg text-gray-600">效用與安全 實證探討</p>
-              </div>
-            </div>
-            {/* --- 導覽列重構開始 --- */}
 
-          {/* 桌面版：維持原本的按鈕樣式 (只在 md 尺寸以上顯示) */}
-          <nav className="hidden md:flex md:flex-wrap md:gap-1 md:justify-center">
-            {navItems.map((item) => (
-              <Button 
-                key={item.id}
-                variant={activeTab === item.id ? 'default' : 'ghost'} 
-                onClick={() => setActiveTab(item.id)}
-                className="transition-all text-base px-4 py-2 h-auto flex-shrink-0"
-              >
-                {item.label}
-              </Button>
-            ))}
-          </nav>
+  return (
+    // 已移除 HelmetProvider
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      
+      {/* SEO 標籤已移至 public/index.html */}
 
-          {/* 手機版：改為下拉式選單 (只在 md 尺寸以下顯示) */}
-          <div className="w-full md:hidden relative">
-            <select
-              value={activeTab}
-              onChange={(e) => setActiveTab(e.target.value)}
-              className="w-full appearance-none rounded-md border-gray-300 bg-gray-100 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-3 text-base font-semibold"
-            >
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md shadow-sm">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+            <div className="flex items-center gap-3">
+              <FlaskConical className="h-10 w-10 text-blue-600" />
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">NMN研究室</h1>
+                <p className="text-base text-gray-600">效用與安全 實證探討</p>
+              </div>
+            </div>
+            
+            <nav className="hidden md:flex md:flex-wrap md:gap-1 md:justify-center">
               {navItems.map((item) => (
-                <option key={item.id} value={item.id}>
+                <Button 
+                  key={item.id}
+                  variant={activeTab === item.id ? 'default' : 'ghost'} 
+                  onClick={() => setActiveTab(item.id)}
+                  className="transition-all text-base px-3 py-1.5 h-auto flex-shrink-0"
+                >
                   {item.label}
-                </option>
+                </Button>
               ))}
-            </select>
-            <ChevronDown className="absolute top-1/2 right-3 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none" />
+            </nav>
+
+            <div className="w-full md:hidden relative mt-2">
+              <select
+                value={activeTab}
+                onChange={(e) => setActiveTab(e.target.value)}
+                className="w-full appearance-none rounded-lg border-2 border-blue-500 bg-blue-50 text-blue-800 shadow-sm focus:border-blue-600 focus:ring-blue-600 p-3 text-base font-bold text-center"
+              >
+                {navItems.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute top-1/2 right-4 -translate-y-1/2 h-6 w-6 text-blue-600 pointer-events-none" />
+            </div>
           </div>
-          
-          {/* --- 導覽列重構結束 --- */}
-          </div>
-        </div>
-      </header>
+        </div>
+      </header>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 max-w-screen-xl">
-        {/* Home Tab */}
-        {activeTab === 'home' && (
-          <div className="space-y-8 animate-fade-in">
-            <Alert className="border-blue-200 bg-blue-50">
-              <Info className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
-              <AlertTitle className="text-xl md:text-2xl font-bold text-blue-900">FDA最新立場更新</AlertTitle>
-              <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-lg md:text-xl">
-                <strong>2025年9月29日</strong>，美國FDA正式改變立場，發布公開信確認「NMN符合膳食補充劑的定義」。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻了2022年的排除決定，為NMN產品在美國市場的合法地位提供了明確保障。
-                <br /><br />
-                <a 
-                  href="https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline font-semibold text-base md:text-lg"
-                >
-                  查看FDA官方回應信件 <ExternalLink className="h-4 w-4" />
-                </a>
-              </AlertDescription>
-            </Alert>
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8 max-w-screen-xl">
+        {activeTab === 'home' && (
+          <div className="space-y-8 animate-fade-in">
+            
+            <div className="text-center space-y-4 pt-4 pb-8">
+               <div className="overflow-hidden rounded-xl shadow-2xl aspect-video mb-6">
+                  <img src="https://i.urusai.cc/J6wnD.jpg" alt="NMN 分子結構與細胞能量概念圖" className="w-full h-full object-cover" />
+               </div>
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">新型態膳食補充劑：NMN</h2>
+              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                菸鹼醯胺單核苷酸（NMN）作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
+              </p>
+            </div>
+            
+            <Alert className="border-blue-200 bg-blue-50">
+              <Info className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
+              <AlertTitle className="text-xl md:text-2xl font-bold text-blue-900">FDA最新立場更新</AlertTitle>
+              <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-lg md:text-xl">
+                美國FDA 2025年9月29日發布公開信確認「NMN符合膳食補充劑的定義」，正式改變立場。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻2022年的排除決定，為NMN產品在美國市場的合法地位提供明確保障。
+                <div className="mt-4">
+                   <a href="https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline font-semibold text-base md:text-lg">
+                    查看FDA官方回應信件 <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </AlertDescription>
+            </Alert>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden" onClick={() => setActiveTab('science')}>
+                <img src="https://i.urusai.cc/UyfbG.jpg" alt="科學實驗室中的燒杯與儀器" className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <CardHeader>
+                  <CardTitle className="text-2xl sm:text-3xl">科學基礎</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">了解NAD⁺與NMN的生物化學機制</CardDescription>
+                </CardHeader>
+              </Card>
 
-            <div className="text-center space-y-4 py-8">
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">新型態膳食補充劑：NMN</h2>
-              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                菸鹼醯胺單核苷酸（NMN）作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
-              </p>
-            </div>
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden" onClick={() => setActiveTab('evidence')}>
+                 <img src="https://i.urusai.cc/HgisN.jpg" alt="醫生正在檢視臨床數據圖表" className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <CardHeader>
+                  <Heart className="h-12 w-12 text-red-600 mb-2" />
+                  <CardTitle className="text-2xl sm:text-3xl">臨床實證</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">探索人體與動物研究的發現</CardDescription>
+                </CardHeader>
+              </Card>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('science')}>
-                <CardHeader>
-                  <FlaskConical className="h-12 w-12 md:h-14 md:w-14 text-blue-600 mb-2" />
-                  <CardTitle className="text-2xl sm:text-3xl">科學基礎</CardTitle>
-                  <CardDescription className="text-lg sm:text-xl">了解NAD⁺與NMN的生物化學機制</CardDescription>
-                </CardHeader>
-              </Card>
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden" onClick={() => setActiveTab('market')}>
+                 <img src="https://i.urusai.cc/xwYpi.jpg" alt="象徵全球市場與法規的地球和法槌" className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <CardHeader>
+                  <Globe className="h-12 w-12 text-green-600 mb-2" />
+                  <CardTitle className="text-2xl sm:text-3xl">市場與法規</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">掌握全球與台灣的監管動態</CardDescription>
+                </CardHeader>
+              </Card>
 
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('evidence')}>
-                <CardHeader>
-                  <Heart className="h-12 w-12 md:h-14 md:w-14 text-red-600 mb-2" />
-                  <CardTitle className="text-2xl sm:text-3xl">臨床實證</CardTitle>
-                  <CardDescription className="text-lg sm:text-xl">探索人體與動物研究的發現</CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('market')}>
-                <CardHeader>
-                  <Globe className="h-12 w-12 md:h-14 md:w-14 text-green-600 mb-2" />
-                  <CardTitle className="text-2xl sm:text-3xl">市場與法規</CardTitle>
-                  <CardDescription className="text-lg sm:text-xl">掌握全球與台灣的監管動態</CardDescription>
-                </CardHeader>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => setActiveTab('conclusion')}>
-                <CardHeader>
-                  <Scale className="h-12 w-12 md:h-14 md:w-14 text-purple-600 mb-2" />
-                  <CardTitle className="text-2xl sm:text-3xl">結論與建議</CardTitle>
-                  <CardDescription className="text-lg sm:text-xl">獲取專業的消費與政策建議</CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-          </div>
-        )}
+              <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden" onClick={() => setActiveTab('conclusion')}>
+                 <img src="https://i.urusai.cc/l8oQ3.jpg" alt="一個人正在仔細閱讀產品標示" className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300" />
+                <CardHeader>
+                  <Scale className="h-12 w-12 text-purple-600 mb-2" />
+                  <CardTitle className="text-2xl sm:text-3xl">結論與建議</CardTitle>
+                  <CardDescription className="text-lg sm:text-xl">獲取專業的消費與政策建議</CardDescription>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
+        )}
 
         {/* Science Tab */}
         {activeTab === 'science' && (
@@ -638,6 +662,33 @@ useEffect(() => {
           </div>
         )}
       </main>
+{activeTab === 'conclusion' && (
+          <div className="space-y-8 animate-fade-in">
+            {/* ... Conclusion Tab 的其他內容 ... */}
+             <div className="mt-12">
+              <h3 className="text-2xl md:text-4xl font-bold text-gray-900 text-center mb-8">常見問題 (FAQ)</h3>
+              <div className="max-w-4xl mx-auto space-y-4">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border rounded-lg overflow-hidden bg-white shadow-sm">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                      className="w-full flex justify-between items-center p-5 text-left font-semibold text-lg text-gray-800 hover:bg-gray-50 transition"
+                    >
+                      <span>{faq.question}</span>
+                      {openFaq === index ? <Minus className="h-5 w-5 text-blue-600" /> : <Plus className="h-5 w-5 text-gray-500" />}
+                    </button>
+                    <div className={`transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}>
+                      <div className="p-5 pt-0 text-gray-600 leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 mt-16">

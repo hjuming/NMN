@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-// 已移除 Helmet, HelmetProvider
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Badge } from '@/components/ui/badge.jsx'
@@ -45,7 +44,6 @@ function App() {
   }, [activeTab]);
 
   return (
-    // 已移除 HelmetProvider
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       
       {/* SEO 標籤已移至 public/index.html */}

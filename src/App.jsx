@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button.jsx'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
-import { Badge } from '@/components/ui/badge.jsx'
-import { Separator } from '@/components/ui/separator.jsx'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert.jsx'
+
+// --- 路徑修改開始：將 '@/' 改為相對路徑 ---
+// 這裡假設您的 App.jsx 和 components 資料夾都在 src 底下
+// 如果您的專案結構不同，請對應修改 './components/...' 這部分
+import { Button } from './components/ui/button.jsx'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card.jsx'
+import { Badge } from './components/ui/badge.jsx'
+import { Separator } from './components/ui/separator.jsx'
+import { Alert, AlertDescription, AlertTitle } from './components/ui/alert.jsx'
+// --- 路徑修改結束 ---
+
 import { FlaskConical, Heart, Scale, Globe, CheckCircle2, AlertTriangle, Info, ExternalLink, ChevronDown, Plus, Minus } from 'lucide-react'
 import './App.css'
 
 function App() {
   const [activeTab, setActiveTab] = useState('home')
-  const [openFaq, setOpenFaq] = useState(null); // FAQ 折疊選單狀態
+  const [openFaq, setOpenFaq] = useState(null);
 
   const navItems = [
     { id: 'home', label: '首頁' },
@@ -38,7 +44,6 @@ function App() {
     }
   ];
   
-  // 每次點選分頁時，都回到最上方
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activeTab]);
@@ -46,7 +51,6 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       
-      {/* Header */}
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-4 py-3">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
@@ -89,9 +93,7 @@ function App() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-8 max-w-screen-xl">
-        {/* Home Tab */}
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-4 pt-4 pb-8">
@@ -157,9 +159,6 @@ function App() {
           </div>
         )}
 
-        {/* --- 以下是已恢復的完整內容 --- */}
-
-        {/* Science Tab */}
         {activeTab === 'science' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-4 py-4">
@@ -168,7 +167,6 @@ function App() {
                 深入了解NAD⁺與NMN的生物化學機制，以及它們在細胞能量代謝與衰老過程中的關鍵角色。
               </p>
             </div>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">NAD⁺：細胞能量與健康的關鍵輔酶</CardTitle>
@@ -205,7 +203,6 @@ function App() {
                 </div>
               </CardContent>
             </Card>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">NMN：NAD⁺的直接前體</CardTitle>
@@ -226,7 +223,6 @@ function App() {
                 </div>
               </CardContent>
             </Card>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">NAD⁺水平與衰老</CardTitle>
@@ -252,7 +248,6 @@ function App() {
           </div>
         )}
 
-        {/* Evidence Tab */}
         {activeTab === 'evidence' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-4 py-4">
@@ -261,7 +256,6 @@ function App() {
                 探索NMN在動物與人體研究中的發現，以及其對代謝、心血管、體能與抗衰老標記的影響。
               </p>
             </div>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">人體臨床試驗發現</CardTitle>
@@ -322,7 +316,6 @@ function App() {
                 </div>
               </CardContent>
             </Card>
-
             <Card className="bg-blue-50 border-blue-200">
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl text-blue-900">更多臨床研究資源</CardTitle>
@@ -345,7 +338,6 @@ function App() {
           </div>
         )}
 
-        {/* Market Tab */}
         {activeTab === 'market' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-4 py-4">
@@ -354,7 +346,6 @@ function App() {
                 了解台灣市場的獨特生態與全球監管動態，掌握NMN產品的法規環境與市場現況。
               </p>
             </div>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">全球監管動態</CardTitle>
@@ -451,7 +442,6 @@ function App() {
           </div>
         )}
 
-        {/* Conclusion Tab */}
         {activeTab === 'conclusion' && (
           <div className="space-y-8 animate-fade-in">
             <div className="text-center space-y-4 py-4">
@@ -460,7 +450,6 @@ function App() {
                 基於科學實證與市場分析，為消費者、產業業者與政策制定者提供專業建議。
               </p>
             </div>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">科學前景與現實差距</CardTitle>
@@ -478,7 +467,6 @@ function App() {
                 </Alert>
               </CardContent>
             </Card>
-
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="border-blue-200">
                 <CardHeader>
@@ -571,7 +559,6 @@ function App() {
                 </CardContent>
               </Card>
             </div>
-
             <Card className="border-2 border-blue-300 bg-gradient-to-br from-blue-50 to-white">
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl text-center text-blue-900">總結</CardTitle>
@@ -582,7 +569,6 @@ function App() {
                 </p>
               </CardContent>
             </Card>
-
             <div className="mt-12">
               <h3 className="text-2xl md:text-4xl font-bold text-gray-900 text-center mb-8">常見問題 (FAQ)</h3>
               <div className="max-w-4xl mx-auto space-y-4">
@@ -608,10 +594,147 @@ function App() {
         )}
       </main>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 mt-16">
         <div className="container mx-auto px-4 space-y-8">
-          {/* ... Footer 內容 ... */}
+          <div className="text-center space-y-4">
+            <p className="text-gray-400 text-base md:text-lg">
+              本網站內容基於科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
+            </p>
+            <p className="text-gray-400 text-base md:text-lg">
+              使用任何補充劑前，請諮詢專業醫療人員。
+            </p>
+          </div>
+          <Separator className="bg-gray-700" />
+          <div className="space-y-6">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">各國監理機關</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+              <a href="https://www.fda.gov/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
+                <span className="text-3xl">🇺🇸</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">美國 FDA</p>
+                  <p className="text-gray-400 text-sm">U.S. Food and Drug Administration</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+              <a href="https://www.efsa.europa.eu/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
+                <span className="text-3xl">🇪🇺</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">歐盟 EFSA</p>
+                  <p className="text-gray-400 text-sm">European Food Safety Authority</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+              <a href="https://www.mhlw.go.jp/english/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
+                <span className="text-3xl">🇯🇵</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">日本 厚生勞動省</p>
+                  <p className="text-gray-400 text-sm">Ministry of Health, Labour and Welfare</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+              <a href="https://www.fda.gov.tw/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
+                <span className="text-3xl">🇹🇼</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">台灣 食藥署</p>
+                  <p className="text-gray-400 text-sm">Taiwan Food and Drug Administration</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+              <a href="https://www.canada.ca/en/health-canada.html" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
+                <span className="text-3xl">🇨🇦</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">加拿大 衛生部</p>
+                  <p className="text-gray-400 text-sm">Health Canada</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+              <a href="https://www.tga.gov.au/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
+                <span className="text-3xl">🇦🇺</span>
+                <div className="text-left flex-1">
+                  <p className="font-semibold text-white text-base md:text-lg">澳洲 藥品管理局</p>
+                  <p className="text-gray-400 text-sm">Therapeutic Goods Administration</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-gray-400" />
+              </a>
+            </div>
+          </div>
+          <Separator className="bg-gray-700" />
+          <div className="space-y-6">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">學術與研究資源</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">📚</span>
+                  <p className="font-semibold text-white text-base md:text-lg">PubMed</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">美國國家醫學圖書館</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+              <a href="https://clinicaltrials.gov/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🔬</span>
+                  <p className="font-semibold text-white text-base md:text-lg">ClinicalTrials.gov</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">臨床試驗資料庫</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+              <a href="https://sinclair.hms.harvard.edu/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🧬</span>
+                  <p className="font-semibold text-white text-base md:text-lg">Sinclair Lab</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">哈佛衰老研究實驗室</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+              <a href="https://medicine.wustl.edu/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-green-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🏥</span>
+                  <p className="font-semibold text-white text-base md:text-lg">WashU Medicine</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">華盛頓大學醫學院</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+            </div>
+          </div>
+          <Separator className="bg-gray-700" />
+          <div className="space-y-6">
+            <h3 className="text-center text-xl md:text-2xl font-bold text-white">行業協會與組織</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              <a href="https://www.npanational.org/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🏛️</span>
+                  <p className="font-semibold text-white text-base md:text-lg">NPA</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">Natural Products Association</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+              <a href="https://anh-usa.org/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🌿</span>
+                  <p className="font-semibold text-white text-base md:text-lg">ANH-USA</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">Alliance for Natural Health USA</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+              <a href="https://www.crnusa.org/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">⚖️</span>
+                  <p className="font-semibold text-white text-base md:text-lg">CRN</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">Council for Responsible Nutrition</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+              <a href="https://www.ahpa.org/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-purple-500">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">🌱</span>
+                  <p className="font-semibold text-white text-base md:text-lg">AHPA</p>
+                </div>
+                <p className="text-gray-400 text-sm text-center">American Herbal Products Association</p>
+                <ExternalLink className="h-4 w-4 text-gray-400 mt-1" />
+              </a>
+            </div>
+          </div>
+          <Separator className="bg-gray-700" />
           <p className="text-gray-500 text-center text-sm md:text-base">
             © 2025 <a href="https://nmn.wedopr.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">NMN研究室</a>. All rights reserved. | <a href="https://www.wedopr.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline">www.WEDOPR.com</a>
           </p>

@@ -239,7 +239,7 @@ function App() {
                   <AlertTriangle className="h-6 w-6 text-orange-600" />
                   <AlertTitle className="text-lg md:text-xl text-orange-900">NAD⁺隨年齡下降</AlertTitle>
                   <AlertDescription className="text-orange-800">
-                    研究顯示，從中年開始，多個組織中的NAD⁺含量可能下降達<strong>50%</strong>。這種NAD⁺耗竭被認為是衰老的九大標誌之一。
+                    研究顯示，從中年開始，多個組織中的NAD⁺含量可能下降達50%。這種NAD⁺耗竭被認為是衰老的九大標誌之一。
                   </AlertDescription>
                 </Alert>
                 <p className="text-gray-700 leading-relaxed">
@@ -620,7 +620,7 @@ function App() {
               本網站內容基於科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
             </p>
             <p className="text-gray-400 text-base md:text-lg">
-              使用任何補充劑前，請諮詢專業醫療人員。
+              使用任何膳食補充劑前，請諮詢專業醫療人員。
             </p>
           </div>
           <Separator className="bg-gray-700" />
@@ -654,7 +654,7 @@ function App() {
               <a href="https://www.fda.gov.tw/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
                 <span className="text-3xl">🇹🇼</span>
                 <div className="text-left flex-1">
-                  <p className="font-semibold text-white text-base md:text-lg">台灣 食藥署</p>
+                  <p className="font-semibold text-white text-base md:text-lg">台灣 食品藥物管理署</p>
                   <p className="text-gray-400 text-sm">Taiwan Food and Drug Administration</p>
                 </div>
                 <ExternalLink className="h-5 w-5 text-gray-400" />

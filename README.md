@@ -1,8 +1,8 @@
-# NMN研究室網站
+NMN研究室：效用與安全實證探討
 
-## 專案簡介
+一個專為菸鹼醯胺單核苷酸（NMN）設計的資訊網站，旨在提供關於NMN的科學基礎、臨床實證、市場現況與法規動態的全面性資訊。本網站特別關注美國FDA對NMN的最新立場，並整合了全球主要國家監理機關的相關政策，以及具公信力的學術研究資源，以幫助消費者、產業業者和政策制定者做出明智的決策。
 
-「NMN研究室」是一個專為菸鹼醯胺單核苷酸（NMN）設計的資訊網站，旨在提供關於NMN的科學基礎、臨床實證、市場現況與法規動態的全面性資訊。本網站特別關注美國FDA對NMN的最新立場，並整合了全球主要國家監理機關的相關政策，以及具公信力的學術研究資源，以幫助消費者、產業業者和政策制定者做出明智的決策。
+➡️ 點此訪問線上網站
 
 ## 專案特色
 
@@ -27,7 +27,7 @@
 
 ## 使用技術
 
-本專案採用現代前端技術棧開發，以確保高效能、可維護性和良好的使用者體驗。
+本專案採用現代前端技術棧開發建構的單頁應用程式 (Single-Page Application)，確保高效能、可維護性和良好的使用者體驗。
 
 - **前端框架**：[React](https://react.dev/)
 - **建構工具**：[Vite](https://vitejs.dev/)
@@ -35,79 +35,146 @@
 - **UI 組件庫**：[Shadcn/ui](https://ui.shadcn.com/)
 - **圖標庫**：[Lucide React](https://lucide.dev/)
 
-## 本地開發設置
 
-若要在本地環境運行此專案，請遵循以下步驟：
+✨ 網站特色
+一站式資訊整合：從科學原理到市場法規，全面覆蓋 NMN 的關鍵資訊。
 
-1. **克隆儲存庫**：
-   ```bash
-   git clone <您的GitHub儲存庫URL>
-   cd NMN
-   ```
+分頁式清晰導覽：採用頁籤 (Tab) 設計，將複雜內容劃分為五大主題，方便使用者快速查找。
 
-2. **安裝依賴**：
-   使用pnpm安裝專案依賴。如果尚未安裝pnpm，請先安裝它：
-   ```bash
-   npm install -g pnpm
-   pnpm install
-   ```
+響應式設計：針對桌面、平板及手機裝置進行優化，確保在任何螢幕尺寸下都有良好的瀏覽體驗。
 
-3. **運行開發伺服器**：
-   ```bash
-   pnpm run dev
-   ```
-   專案將在 `http://localhost:5173` 啟動。
+互動式 FAQ：提供可折疊的常見問答區塊，快速解答使用者心中的疑惑。
 
-4. **建立生產版本**：
-   ```bash
-   pnpm run build
-   ```
-   這將在 `dist/` 目錄中生成用於生產環境的靜態文件。
+資料來源透明：所有內容皆基於公開的研究文獻與權威機構網站，並提供參考連結。
 
-## 部署
+AI SEO / AIO 優化：網站的 HTML 結構與 Meta 標籤經過優化，有利於搜尋引擎與 AI 理解內容。
 
-本網站已部署至 Manus Cloud，可透過以下連結訪問：
+📄 參考資料來源
+以下為本網站內容所參考的主要文獻、報告與官方網站。
 
-[NMN研究室網站](https://nmn-research-lab-nmn-research-lab-branch-3.manus.cloud/)
+主要研究文獻
+NMN 改善胰島素敏感性研究 (聖路易斯華盛頓大學): https://pubmed.ncbi.nlm.nih.gov/33888596/
 
-### 部署到 Cloudflare Pages
+NMN 安全性綜合研究 (GeroScience, 2023): https://pubmed.ncbi.nlm.nih.gov/36482258/
 
-您可以將此專案部署到 Cloudflare Pages，以獲得快速、可靠的全球內容分發。以下是部署步驟：
+數據庫與研究機構
+美國國家醫學圖書館 (PubMed): https://pubmed.ncbi.nlm.nih.gov/
 
-1. **登入 Cloudflare 帳戶**：
-   前往 [Cloudflare Dashboard](https://dash.cloudflare.com/) 並登入您的帳戶。
+美國臨床試驗資料庫 (ClinicalTrials.gov): https://clinicaltrials.gov/
 
-2. **選擇 Pages 服務**：
-   在左側導航欄中，點擊「Workers & Pages」，然後選擇「Create application」並點擊「Pages」下的「Connect to Git」。
+哈佛大學 Sinclair 衰老研究實驗室: https://sinclair.hms.harvard.edu/
 
-3. **連接 GitHub 儲存庫**：
-   - 選擇您的 GitHub 帳戶，並授權 Cloudflare 訪問您的儲存庫。
-   - 選擇 `NMN` 儲存庫。
+聖路易斯華盛頓大學醫學院: https://medicine.wustl.edu/
 
-4. **配置建構設定**：
-   - **Project name**: `NMN` (或您喜歡的名稱)
-   - **Production branch**: `main`
-   - **Build command**: `pnpm install && pnpm run build`
-   - **Build output directory**: `dist`
+各國監管機關
+美國食品藥物管理局 (FDA): https://www.fda.gov/
 
-5. **部署網站**：
-   點擊「Save and Deploy」。Cloudflare 將會自動從您的 GitHub 儲存庫拉取代碼，執行建構命令，並將生成的靜態文件部署到其全球邊緣網路。
+FDA 官方回應信件: https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf
 
-6. **查看部署狀態**：
-   部署完成後，您將獲得一個唯一的預覽 URL。每次您推送到 `main` 分支時，Cloudflare Pages 都會自動重新建構和部署您的網站。
+歐洲食品安全局 (EFSA): https://www.efsa.europa.eu/
 
-## 貢獻
+日本厚生勞動省 (MHLW): https://www.mhlw.go.jp/english/
 
-歡迎任何形式的貢獻！如果您有任何建議或發現問題，請隨時提交 Issue 或 Pull Request。
+台灣衛生福利部食品藥物管理署 (TFDA): https://www.fda.gov.tw/
 
-## 授權
+加拿大衛生部 (Health Canada): https://www.canada.ca/en/health-canada.html
 
-本專案採用 MIT 授權協議。詳情請參閱 `LICENSE` 文件。
+澳洲藥品管理局 (TGA): https://www.tga.gov.au/
 
-## 作者
+🤖 使用 AI 工具架設類似網站指南
+如果您想利用大型語言模型（LLM）等 AI 工具來建立一個類似的資訊網站，可以遵循以下步驟。核心理念是將一個複雜的任務拆解成多個具體、清晰的指令 (Prompt)。
 
-Manus AI
+步驟一：定義專案與技術選型 (Prompt 1)
+首先，您需要讓 AI 為您建立整個專案的基礎架構和程式碼。
 
-## 更新日期
+目標：生成一個包含所有必要檔案和基本版面（如 Header, Main, Footer）的單頁應用程式。
 
-2025年10月4日
+提示詞範例:
+
+請扮演一位資深前端工程師。我需要建立一個關於「NMN 效用與安全探討」的資訊網站。
+
+技術要求:
+
+使用 React 和 Vite 來建立專案。
+
+使用 Tailwind CSS 進行樣式設計。
+
+這是一個單頁應用程式 (SPA)。
+
+頁面結構要求:
+
+一個固定的 Header，包含網站標題「NMN研究室」和一個導覽列。
+
+導覽列有五個按鈕：「首頁」、「科學基礎」、「臨床實證」、「市場與法規」、「結論與建議」。
+
+一個主要的 Main 內容區塊，內容會根據點擊的導覽按鈕而切換。
+
+一個固定的 Footer，包含版權聲明和免責聲明。
+
+請為我生成 App.jsx 檔案的完整程式碼，並使用 useState 來管理當前活動的頁籤狀態。
+
+步驟二：生成頁面主要內容 (Prompt 2)
+有了骨架後，開始填充每個頁面的詳細文字內容。
+
+目標：為每個分頁生成專業、結構化的文字內容。
+
+提示詞範例:
+
+根據我們剛才建立的網站架構，請為「科學基礎」這個分頁撰寫內容。內容需要以中立、科學的語氣撰寫，並分為三個主要部分，每個部分都放在卡片 (Card) 樣式中：
+
+第一部分: 解釋什麼是 NAD⁺，以及它在細胞能量代謝中的關鍵作用。
+
+第二部分: 解釋什麼是 NMN，以及它作為 NAD⁺ 直接前體的「補救合成途徑」是什麼。
+
+第三部分: 描述 NAD⁺ 水平與年齡增長的關係，以及這為什麼是抗衰老研究的重點。
+
+請在內容中適當地使用 <strong> 標籤來強調關鍵字詞。
+
+步驟三：細化元件與加入視覺元素 (Prompt 3)
+當內容就緒後，您可以要求 AI 美化版面、加入圖片和互動功能。
+
+目標：在現有程式碼基礎上，加入圖片、圖示和 FAQ 等功能。
+
+提示詞範例:
+
+好的，現在請修改我提供的 App.jsx 程式碼，並完成以下任務：
+
+在「結論與建議」分頁的底部，新增一個可折疊的 FAQ 區塊。請提供 5 個關於 NMN 的常見問題與答案。
+
+在「首頁」頂部，FDA 最新立場的上方，加入一張 16:9 的 Hero 圖片，圖片網址為 [您的圖片網址]。
+
+在首頁的四個導覽卡片（科學基礎、臨床實證...）中，分別加入對應的圖片，並讓滑鼠懸停時有放大的視覺效果。
+
+請使用 lucide-react 的圖示來美化細節，例如 FAQ 的展開/收合符號。
+
+步驟四：SEO 與最終優化 (Prompt 4)
+最後一步是讓網站對搜尋引擎更友善。
+
+目標：生成用於 index.html 的 Meta 標籤。
+
+提示詞範例:
+
+請為我的「NMN研究室」網站（網址為 https://nmn.wedopr.com/）生成一份完整的 HTML <head> 標籤內容。
+
+要求包含:
+
+網頁標題 (<title>)
+
+網頁描述 (<meta name="description">)
+
+社群分享用的 Open Graph 標籤，特別是 og:title, og:description, 和 og:image。分享代表圖的網址是 https://i.urusai.cc/J6wnD.jpg。
+
+Twitter Card 標籤。
+
+指定標準網址的 canonical 連結。
+
+提示詞 (Prompt) 撰寫技巧總結
+角色扮演：讓 AI 扮演特定專家（如前端工程師、SEO 專家），能讓它產出更專業的結果。
+
+提供上下文：每次提問時，附上目前的程式碼，讓 AI 在現有基礎上修改，而不是重新生成。
+
+指令清晰且條列化：將多個需求用條列式（1, 2, 3...）說清楚，AI 更容易理解。
+
+指定具體技術：明確告知 AI 您要使用的框架和工具庫（React, Tailwind CSS, Vite）。
+
+分步迭代：不要試圖用一個提示詞完成所有事。像我們一樣，從骨架 -> 內容 -> 美化 -> 優化，一步步完成專案。

@@ -30,7 +30,7 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\n NMN → NAD+。\n\n這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\nNMN → NAD+。\n\n這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",
@@ -115,7 +115,7 @@ function App() {
               <Info className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
               <AlertTitle className="text-xl md:text-2xl font-bold text-blue-900">FDA最新立場更新</AlertTitle>
               <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-lg md:text-xl">
-                美國FDA 2025年9月29日發布公開信確認「NMN符合膳食補充劑的定義」，正式改變立場。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此舉等於推翻2022年的排除決定，為NMN產品在美國市場的合法地位提供明確保障。
+                （2025年9月29日）美國FDA 發布公開信確認「NMN符合膳食補充劑的定義」，正式改變立場。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此舉等於推翻2022年的排除決定，為NMN產品在美國市場的合法地位提供明確保障。
                 <div className="mt-4">
                    <a href="https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline font-semibold text-base md:text-lg">
                     查看FDA官方回應信件 <ExternalLink className="h-4 w-4" />

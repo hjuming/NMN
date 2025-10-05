@@ -108,7 +108,6 @@ function App() {
                 <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
                   菸鹼醯胺單核苷酸 (NMN) 作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。
                 </p>
-                本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
               </div>
             </div>
             
@@ -628,7 +627,7 @@ function App() {
         <div className="container mx-auto px-4 space-y-8">
           <div className="text-center space-y-4">
             <p className="text-gray-400 text-base md:text-lg">
-              本網站內容基於科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
+              本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。資料來源為科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
             </p>
             <p className="text-gray-400 text-base md:text-lg">
               使用任何補充劑前，請諮詢專業醫療人員。

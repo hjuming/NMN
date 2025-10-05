@@ -23,7 +23,7 @@ function App() {
     { id: 'conclusion', label: '結論與建議' },
   ]
 
-  // --- FAQ 內容已擴充 ---
+  // --- FAQ 內容已擴充 ---」
   const faqData = [
     {
       question: "NMN 是什麼？它和 NAD+ 有什麼關係？",
@@ -31,8 +31,7 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\n NR → NMN → NAD+ \n 、 \n NMN → NAD+ \n 這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。因此，它們的路徑分別是：\n NR → NMN → NAD+ \n 、 \n NMN → NAD+ \n 。這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",
@@ -345,15 +344,7 @@ function App() {
                   <ExternalLink className="h-5 w-5" />
                   The Sinclair Lab - 哈佛大學衰老研究實驗室
                 </a>
-              </CardContent>
-            </Card>
-          </div>
-        )}
-
-        {activeTab === 'market' && (
-          <div className="space-y-8 animate-fade-in">
-            {/* --- Hero 圖片已加入 --- */}
-            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
+              
               <img src="https://i.urusai.cc/xwYpi.jpg" alt="市場與法規概念圖" className="w-full h-full object-cover" />
             </div>
             <div className="text-center space-y-4 py-4">

@@ -31,11 +31,11 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\n、NMN → NAD+\n\n。這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n 因此，它們的路徑分別是：\n NR → NMN → NAD+\n、NMN → NAD+ \n\n。這代表 <strong className="text-blue-600">NR 轉化為 NAD+ 的步驟比 NMN 多了一步</strong>，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",
-      answer: "根據目前已發表的人體臨床試驗，NMN 具有良好的安全性和耐受性。常見的有效劑量範圍在每日 250mg 至 1000mg 之間。然而，如果您有潛在的健康問題或正在服用其他藥物，在開始服用任何新的補充劑前，務必諮詢您的醫師或專業醫療人員。"
+      answer: "根據目前已發表的人體臨床試驗，NMN 具有良好的安全性和耐受性。常見的有效劑量範圍在<strong className="text-blue-600">每日 250mg 至 1000mg</strong> 之間。然而，如果您有潛在的健康問題或正在服用其他藥物，在開始服用任何新的補充劑前，務必諮詢您的醫師或專業醫療人員。"
     },
     {
       question: "購買 NMN 產品時應該注意什麼？",

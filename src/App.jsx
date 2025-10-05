@@ -30,7 +30,7 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\nNMN → NAD+\n\n這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\n、NMN → NAD+。\n\n這代表<strong>NR 轉化為 NAD+ 的步驟比 NMN 多了一步</strong> ，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",
@@ -99,9 +99,9 @@ function App() {
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fade-in">
 
-            {/* --- Home Hero 區塊已修改 --- */}
+            {/* --- Home Hero 圖片連結已更新 --- */}
             <div className="relative w-full overflow-hidden rounded-xl shadow-2xl aspect-video">
-              <img src="https://i.imgur.com/k4QYq1j.jpg" alt="新型態膳食補充劑：NMN" className="w-full h-full object-cover" />
+              <img src="https://i.urusai.cc/J6wnD.jpg" alt="新型態膳食補充劑：NMN" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/40"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
                 <h2 className="text-4xl sm:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>新型態膳食補充劑：NMN</h2>
@@ -166,9 +166,9 @@ function App() {
 
         {activeTab === 'science' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Science Hero 區塊已修改 --- */}
+            {/* --- Science Hero 圖片連結已更新 --- */}
             <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
-              <img src="https://i.imgur.com/g0t4xTm.jpeg" alt="NMN的科學基礎" className="w-full h-full object-cover" />
+              <img src="https://i.urusai.cc/UyfbG.jpg" alt="NMN的科學基礎" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/30"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
                 <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>NMN的科學基礎</h2>
@@ -261,9 +261,9 @@ function App() {
 
         {activeTab === 'evidence' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Evidence Hero 區塊已修改 --- */}
+            {/* --- Evidence Hero 圖片連結已更新 --- */}
             <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
-              <img src="https://i.imgur.com/uFZXy8g.jpeg" alt="臨床實證" className="w-full h-full object-cover" />
+              <img src="https://i.urusai.cc/HgisN.jpg" alt="臨床實證" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/30"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
                 <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>臨床實證</h2>
@@ -357,9 +357,9 @@ function App() {
 
         {activeTab === 'market' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Market Hero 區塊已修改 --- */}
+            {/* --- Market Hero 圖片連結已更新 --- */}
             <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
-              <img src="https://i.imgur.com/gI494zU.jpeg" alt="市場與法規" className="w-full h-full object-cover" />
+              <img src="https://i.urusai.cc/xwYpi.jpg" alt="市場與法規" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/30"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
                 <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>市場與法規</h2>
@@ -467,9 +467,9 @@ function App() {
 
         {activeTab === 'conclusion' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Conclusion Hero 區塊已修改 --- */}
+            {/* --- Conclusion Hero 圖片連結已更新 --- */}
             <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
-              <img src="https://i.imgur.com/x3iHwz2.jpeg" alt="結論與建議" className="w-full h-full object-cover" />
+              <img src="https://i.urusai.cc/l8oQ3.jpg" alt="結論與建議" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-black/30"></div>
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
                 <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>結論與建議</h2>

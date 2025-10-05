@@ -31,7 +31,8 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，也都能有效提升體內 NAD+ 水平。主要區別在於它們的分子結構和進入細胞的路徑。NMN 的分子比 NR 大一點。科學界對哪個前體更優越尚無定論，兩者都有研究支持其功效。您可以將它們視為通往相同目的地（提升 NAD+）的不同路徑。"
+      answer: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\nNMN → NAD+\n\n這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",

@@ -23,7 +23,6 @@ function App() {
     { id: 'conclusion', label: '結論與建議' },
   ]
 
-  // --- FAQ 內容已擴充 ---」
   const faqData = [
     {
       question: "NMN 是什麼？它和 NAD+ 有什麼關係？",
@@ -31,15 +30,15 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n 因此，它們的路徑分別是：\n NR → NMN → NAD+\n、NMN → NAD+ \n\n。這代表 <strong className="text-blue-600">NR 轉化為 NAD+ 的步驟比 NMN 多了一步</strong>，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\nNMN → NAD+\n\n這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",
-      answer: "根據目前已發表的人體臨床試驗，NMN 具有良好的安全性和耐受性。常見的有效劑量範圍在<strong className="text-blue-600">每日 250mg 至 1000mg</strong> 之間。然而，如果您有潛在的健康問題或正在服用其他藥物，在開始服用任何新的補充劑前，務必諮詢您的醫師或專業醫療人員。"
+      answer: "根據目前已發表的人體臨床試驗，NMN 具有良好的安全性和耐受性。常見的有效劑量範圍在每日 250mg 至 1000mg 之間。然而，如果您有潛在的健康問題或正在服用其他藥物，在開始服用任何新的補充劑前，務必諮詢您的醫師或專業醫療人員。"
     },
     {
       question: "購買 NMN 產品時應該注意什麼？",
-      answer: "選購時應注意以下三點：1. 純度：選擇純度高達 99% 以上的產品。2.第三方檢測：確認產品是否經過獨立實驗室的檢測，以確保其純度和不含有害物質（如重金屬）。3. 信譽：選擇信譽良好、資訊透明的品牌。警惕價格過低或來源不明的產品。"
+      answer: "選購時應注意以下三點：1. **純度**：選擇純度高達 99% 以上的產品。2. **第三方檢測**：確認產品是否經過獨立實驗室的檢測，以確保其純度和不含有害物質（如重金屬）。3. **信譽**：選擇信譽良好、資訊透明的品牌。警惕價格過低或來源不明的產品。"
     },
     {
       question: "運動搭配 NMN 是否效果更好？",
@@ -99,21 +98,24 @@ function App() {
       <main className="container mx-auto px-4 py-8 max-w-screen-xl">
         {activeTab === 'home' && (
           <div className="space-y-8 animate-fade-in">
-            <div className="text-center space-y-4 pt-4 pb-8">
-               <div className="overflow-hidden rounded-xl shadow-2xl aspect-video mb-6">
-                  <img src="https://i.urusai.cc/J6wnD.jpg" alt="NMN 分子結構與細胞能量概念圖" className="w-full h-full object-cover" />
-               </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">新型態膳食補充劑：NMN</h2>
-              <p className="text-xl sm:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                菸鹼醯胺單核苷酸（NMN）作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
-              </p>
+
+            {/* --- Home Hero 區塊已修改 --- */}
+            <div className="relative w-full overflow-hidden rounded-xl shadow-2xl aspect-video">
+              <img src="https://i.imgur.com/k4QYq1j.jpg" alt="新型態膳食補充劑：NMN" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
+                <h2 className="text-4xl sm:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>新型態膳食補充劑：NMN</h2>
+                <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
+                  菸鹼醯胺單核苷酸 (NMN) 作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
+                </p>
+              </div>
             </div>
             
             <Alert className="border-blue-200 bg-blue-50">
               <Info className="h-6 w-6 md:h-7 md:w-7 text-blue-600" />
               <AlertTitle className="text-xl md:text-2xl font-bold text-blue-900">FDA最新立場更新</AlertTitle>
               <AlertDescription className="text-blue-800 leading-relaxed mt-3 text-lg md:text-xl">
-                美國FDA 2025年9月29日發布公開信確認「NMN符合膳食補充劑的定義」，正式改變立場。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此外，FDA強調NMN是人體NAD⁺生物合成途徑的天然中間產物，這一特性進一步支持將其視為膳食補充成分而非藥物。此舉等於推翻2022年的排除決定，為NMN產品在美國市場的合法地位提供明確保障。
+                美國FDA 2025年9月29日發布公開信確認「NMN符合膳食補充劑的定義」，正式改變立場。FDA表示經分析發現有足夠證據證明NMN在被藥物立項前已作為膳食產品上市銷售，因此不受藥物優先條款限制。此舉等於推翻2022年的排除決定，為NMN產品在美國市場的合法地位提供明確保障。
                 <div className="mt-4">
                    <a href="https://downloads.regulations.gov/FDA-2023-P-0872-2754/attachment_1.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 underline font-semibold text-base md:text-lg">
                     查看FDA官方回應信件 <ExternalLink className="h-4 w-4" />
@@ -164,16 +166,18 @@ function App() {
 
         {activeTab === 'science' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Hero 圖片已加入 --- */}
-            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
-              <img src="https://i.urusai.cc/UyfbG.jpg" alt="科學基礎概念圖" className="w-full h-full object-cover" />
+            {/* --- Science Hero 區塊已修改 --- */}
+            <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
+              <img src="https://i.imgur.com/g0t4xTm.jpeg" alt="NMN的科學基礎" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
+                <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>NMN的科學基礎</h2>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
+                  深入了解NAD⁺與NMN的生物化學機制，以及它們在細胞能量代謝與衰老過程中的關鍵角色。
+                </p>
+              </div>
             </div>
-            <div className="text-center space-y-4 py-4">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">NMN的科學基礎</h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                深入了解NAD⁺與NMN的生物化學機制，以及它們在細胞能量代謝與衰老過程中的關鍵角色。
-              </p>
-            </div>
+            {/* --- (以下 Card 內容不變) --- */}
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">NAD⁺：細胞能量與健康的關鍵輔酶</CardTitle>
@@ -239,7 +243,7 @@ function App() {
                   <AlertTriangle className="h-6 w-6 text-orange-600" />
                   <AlertTitle className="text-lg md:text-xl text-orange-900">NAD⁺隨年齡下降</AlertTitle>
                   <AlertDescription className="text-orange-800">
-                    研究顯示，從中年開始，多個組織中的NAD⁺含量可能下降達50%。這種NAD⁺耗竭被認為是衰老的九大標誌之一。
+                    研究顯示，從中年開始，多個組織中的NAD⁺含量可能下降達<strong>50%</strong>。這種NAD⁺耗竭被認為是衰老的九大標誌之一。
                   </AlertDescription>
                 </Alert>
                 <p className="text-gray-700 leading-relaxed">
@@ -257,16 +261,18 @@ function App() {
 
         {activeTab === 'evidence' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Hero 圖片已加入 --- */}
-            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
-              <img src="https://i.urusai.cc/HgisN.jpg" alt="臨床實證概念圖" className="w-full h-full object-cover" />
+            {/* --- Evidence Hero 區塊已修改 --- */}
+            <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
+              <img src="https://i.imgur.com/uFZXy8g.jpeg" alt="臨床實證" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
+                <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>臨床實證</h2>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
+                  探索NMN在動物與人體研究中的發現，以及其對代謝、心血管、體能與抗衰老標記的影響。
+                </p>
+              </div>
             </div>
-            <div className="text-center space-y-4 py-4">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">臨床實證</h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                探索NMN在動物與人體研究中的發現，以及其對代謝、心血管、體能與抗衰老標記的影響。
-              </p>
-            </div>
+            {/* --- (以下 Card 內容不變) --- */}
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">人體臨床試驗發現</CardTitle>
@@ -344,15 +350,25 @@ function App() {
                   <ExternalLink className="h-5 w-5" />
                   The Sinclair Lab - 哈佛大學衰老研究實驗室
                 </a>
-              
-              <img src="https://i.urusai.cc/xwYpi.jpg" alt="市場與法規概念圖" className="w-full h-full object-cover" />
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {activeTab === 'market' && (
+          <div className="space-y-8 animate-fade-in">
+            {/* --- Market Hero 區塊已修改 --- */}
+            <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
+              <img src="https://i.imgur.com/gI494zU.jpeg" alt="市場與法規" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
+                <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>市場與法規</h2>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
+                  了解台灣市場的獨特生態與全球監管動態，掌握NMN产品的法規環境與市場現況。
+                </p>
+              </div>
             </div>
-            <div className="text-center space-y-4 py-4">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">市場與法規</h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                了解台灣市場的獨特生態與全球監管動態，掌握NMN產品的法規環境與市場現況。
-              </p>
-            </div>
+            {/* --- (以下 Card 內容不變) --- */}
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">全球監管動態</CardTitle>
@@ -451,16 +467,18 @@ function App() {
 
         {activeTab === 'conclusion' && (
           <div className="space-y-8 animate-fade-in">
-            {/* --- Hero 圖片已加入 --- */}
-            <div className="w-full overflow-hidden rounded-xl shadow-lg aspect-video mb-6">
-              <img src="https://i.urusai.cc/l8oQ3.jpg" alt="結論與建議概念圖" className="w-full h-full object-cover" />
+            {/* --- Conclusion Hero 區塊已修改 --- */}
+            <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
+              <img src="https://i.imgur.com/x3iHwz2.jpeg" alt="結論與建議" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/30"></div>
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
+                <h2 className="text-4xl md:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>結論與建議</h2>
+                <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
+                  基於科學實證與市場分析，為消費者、產業業者與政策制定者提供專業建議。
+                </p>
+              </div>
             </div>
-            <div className="text-center space-y-4 py-4">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900">結論與建議</h2>
-              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                基於科學實證與市場分析，為消費者、產業業者與政策制定者提供專業建議。
-              </p>
-            </div>
+            {/* --- (以下 Card & FAQ 內容不變) --- */}
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl">科學前景與現實差距</CardTitle>
@@ -593,7 +611,7 @@ function App() {
                       {openFaq === index ? <Minus className="h-5 w-5 text-blue-600" /> : <Plus className="h-5 w-5 text-gray-500" />}
                     </button>
                     <div className={`transition-all duration-500 ease-in-out ${openFaq === index ? 'max-h-96' : 'max-h-0'}`}>
-                      <div className="p-5 pt-0 text-gray-600 leading-relaxed">
+                      <div className="p-5 pt-0 text-gray-600 leading-relaxed" style={{whiteSpace: 'pre-wrap'}}>
                         {faq.answer}
                       </div>
                     </div>
@@ -612,7 +630,7 @@ function App() {
               本網站內容基於科學研究與公開資料整理，僅供資訊參考，不構成醫療建議。
             </p>
             <p className="text-gray-400 text-base md:text-lg">
-              使用任何膳食補充劑前，請諮詢專業醫療人員。
+              使用任何補充劑前，請諮詢專業醫療人員。
             </p>
           </div>
           <Separator className="bg-gray-700" />
@@ -646,7 +664,7 @@ function App() {
               <a href="https://www.fda.gov.tw/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all hover:scale-105 border border-gray-700 hover:border-blue-500">
                 <span className="text-3xl">🇹🇼</span>
                 <div className="text-left flex-1">
-                  <p className="font-semibold text-white text-base md:text-lg">台灣 食品藥物管理署</p>
+                  <p className="font-semibold text-white text-base md:text-lg">台灣 食藥署</p>
                   <p className="text-gray-400 text-sm">Taiwan Food and Drug Administration</p>
                 </div>
                 <ExternalLink className="h-5 w-5 text-gray-400" />

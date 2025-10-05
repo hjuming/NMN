@@ -243,7 +243,7 @@ function App() {
                   <AlertTriangle className="h-6 w-6 text-orange-600" />
                   <AlertTitle className="text-lg md:text-xl text-orange-900">NAD⁺隨年齡下降</AlertTitle>
                   <AlertDescription className="text-orange-800">
-                    研究顯示，從中年開始，多個組織中的NAD⁺含量可能下降達<strong>50%</strong>。這種NAD⁺耗竭被認為是衰老的九大標誌之一。
+                    研究顯示，從中年開始，多個組織中的NAD⁺含量可能下降達50%。這種NAD⁺耗竭被認為是衰老的九大標誌之一。
                   </AlertDescription>
                 </Alert>
                 <p className="text-gray-700 leading-relaxed">

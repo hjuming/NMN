@@ -30,7 +30,7 @@ function App() {
     },
     {
       question: "NMN 和 NR (菸鹼醯胺核糖) 有什麼不同？",
-      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\n、NMN → NAD+。\n\n這代表<strong>NR 轉化為 NAD+ 的步驟比 NMN 多了一步</strong> ，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
+      answer: "NMN 和 NR 都是 NAD+ 的前體，但它們在人體內的轉化途徑不同。根據 NAD+ salvage pathway (補救合成途徑)，口服的 NR 進入人體後，需要先透過 NRK1 和 NRK2 酶的作用，轉化為 NMN。然後，NMN 再一步轉化為 NAD+。\n\n因此，它們的路徑分別是：\nNR → NMN → NAD+\n NMN → NAD+。\n\n這代表 NR 轉化為 NAD+ 的步驟比 NMN 多了一步，所以 NMN 是更直接、更有效率的 NAD+ 前體。"
     },
     {
       question: "服用 NMN 安全嗎？建議的劑量是多少？",

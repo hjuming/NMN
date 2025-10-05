@@ -106,8 +106,9 @@ function App() {
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
                 <h2 className="text-4xl sm:text-5xl font-bold" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.5)'}}>新型態膳食補充劑：NMN</h2>
                 <p className="text-lg sm:text-xl max-w-4xl mx-auto leading-relaxed mt-4" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.5)'}}>
-                  菸鹼醯胺單核苷酸 (NMN) 作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
+                  菸鹼醯胺單核苷酸 (NMN) 作為NAD⁺的直接前體，在抗衰老保健領域備受矚目。
                 </p>
+                本網站基於科學實證，深入探討NMN的作用機制、臨床證據、市場現況與法規環境，為消費者、業者與政策制定者提供全面的參考資訊。
               </div>
             </div>
             

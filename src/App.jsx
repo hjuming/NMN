@@ -766,7 +766,7 @@ function ConclusionSection() {
       <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
         <img src="https://i.urusai.cc/l8oQ3.jpg" alt="結論與建議" className="w-full h-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 flex flex-col justify中心 items-center text-center text-white p-4">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white p-4">
           <h2 className="text-4xl md:text-5xl font-bold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>結論與建議</h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto mt-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}>
             基於科學實證與市場分析，為消費者、產業業者與政策制定者提供專業建議。
